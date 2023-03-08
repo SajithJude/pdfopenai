@@ -31,7 +31,7 @@ def print_memory_usage():
 
 def main():
 
-    st.title("Upload a document and generate questions to stimulate a discussion from it..")
+    st.title("Upload a document less than 3000 words")
     num =   st.slider("How many Lines do you want in the output ?",min_value=6,max_value=30)
     # quer = st.text_input("What do you want to paraphrase")
     
