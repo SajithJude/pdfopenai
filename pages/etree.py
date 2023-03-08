@@ -22,6 +22,7 @@ if uploaded_file is not None:
         text += page.extract_text()
 
     # create XML tree from text
+    st.write(text)
     root = fromstring(text)
 
     # display XML tree
