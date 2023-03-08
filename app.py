@@ -32,8 +32,8 @@ def print_memory_usage():
 def main():
 
     st.title("Upload a document and generate questions to stimulate a discussion from it..")
-    num =   st.slider("how many questions do you want to generate ?",min_value=6,max_value=30)
-
+    num =   st.slider("How many Lines do you want in the output ?",min_value=6,max_value=30)
+    quer = st.text_input("What do you want to paraphrase")
     
     stop_words = set(stopwords.words('english'))
 
@@ -62,7 +62,7 @@ def main():
 
         response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="Create a list of " + str(num) + " questions to stimulate discussion from the given text" + info  + "Include references to specific parts of the text in the questions, and invite students to refer to specific sentences from the text.",
+        prompt="Paraphrase this content :" + str(info) + " outputs should be " + str(num)  + " lines long.",
         temperature=0.56,
         max_tokens=2066,
         top_p=1,
