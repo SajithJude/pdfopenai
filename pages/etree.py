@@ -1,7 +1,7 @@
 import streamlit as st
 import io
 import PyPDF2
-from xml.etree.ElementTree import XML, fromstring
+from xml.etree.ElementTree import XML, fromstring, tostring
 # create file upload widget
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
@@ -22,7 +22,7 @@ if uploaded_file is not None:
         text += page.extract_text()
 
     # create XML tree from text
-    root = ET.fromstring(text)
+    root = fromstring(text)
 
     # display XML tree
-    st.write(ET.tostring(root))
+    st.write(tostring(root))
