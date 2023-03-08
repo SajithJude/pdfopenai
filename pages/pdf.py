@@ -15,6 +15,7 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 import xml.etree.ElementTree as ET
 import streamlit as st
+from xml.etree.ElementTree import XML, fromstring, tostring
 
 def convert_pdf_to_xml(file):
     # Create a resource manager object to store shared resources
@@ -50,7 +51,13 @@ st.title("PDF Layout Visualizer")
 pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 if pdf_file is not None:
     xml_data = convert_pdf_to_xml(pdf_file)
-    st.text_area("XML Data", value=xml_data, height=600)
+    # st.text_area("XML Data", value=xml_data, height=600)
+    root = fromstring(xml_data)
+
+    # display XML tree
+    st.write(tostring(root))
+
+
     # Convert the uploaded PDF file into a BytesIO object
     pdf_io = io.BytesIO(pdf_file.read())
     layouts = []
