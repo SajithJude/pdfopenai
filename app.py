@@ -33,7 +33,7 @@ def main():
 
     st.title("Upload a document and generate questions to stimulate a discussion from it..")
     num =   st.slider("How many Lines do you want in the output ?",min_value=6,max_value=30)
-    quer = st.text_input("What do you want to paraphrase")
+    # quer = st.text_input("What do you want to paraphrase")
     
     stop_words = set(stopwords.words('english'))
 
@@ -51,7 +51,7 @@ def main():
                 filtered_sentence.append(w)
         my_lst_str = ' '.join(map(str, filtered_sentence))
         info = (my_lst_str[:3500] + '..') if len(my_lst_str) > 3500 else my_lst_str
-        st.write(info)
+        # st.write(info)
 
 
         if st.button("Generate questions from document"):
