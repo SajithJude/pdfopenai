@@ -16,8 +16,7 @@ st.write(pdfminer.__version__)
 st.write("hshss")
 uploaded_file = st.file_uploader("Choose a file", "pdf")
 if uploaded_file is not None:
-    txt= extract_text_to_fp(fin, output_string, laparams=LAParams(),
-                        output_type='html', codec=None)
+    txt= extract_text_to_fp(fin, output_string, laparams=LAParams(), output_type='html', codec=None)
     st.write(txt)
     st.markdown(txt,  unsafe_allow_html=True)
 
