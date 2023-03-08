@@ -25,7 +25,7 @@ if uploaded_file is not None:
     st.write(text)
 
 
-    # root = fromstring(text)
+    root = fromstring(text)
 
     # display XML tree
-    st.write(tostring(text))
+    st.write(tostring(root))
