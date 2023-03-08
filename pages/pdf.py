@@ -75,4 +75,4 @@ if pdf_file is not None:
         for pages in layouts:
             for element in pages:
 
-                st.write(pages)
+                st.write(element)
