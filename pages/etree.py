@@ -1,8 +1,7 @@
 import streamlit as st
 import io
 import PyPDF2
-import xml.etree.ElementTree as ET
-
+from xml.etree.ElementTree import XML, fromstring
 # create file upload widget
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
