@@ -36,9 +36,7 @@ def convert_pdf_to_xml(file):
     # Get the XML data from the output string
     xml_data = out_string.getvalue().decode("utf-8")
 
-    # Close the output string and XML converter objects
-    out_string.close()
-    converter.close()
+   
 
     # Return the XML data
     return xml_data
