@@ -54,24 +54,24 @@ def main():
         st.write(info)
 
 
-    if st.button("Generate questions from document"):
-        # print_memory_usage()
+        if st.button("Generate questions from document"):
+            # print_memory_usage()
 
-        openai.api_key =  os.getenv("API_KEY")
+            openai.api_key =  os.getenv("API_KEY")
 
 
-        response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt="Paraphrase this content :" + str(info) + " outputs should be " + str(num)  + " lines long.",
-        temperature=0.56,
-        max_tokens=2066,
-        top_p=1,
-        frequency_penalty=0.35,
-        presence_penalty=0,
-        stop=["\n"]
-        )
-        st.write(response.choices[0].text)
-        st.write(response)
+            response = openai.Completion.create(
+            model="text-davinci-003",
+            prompt="Paraphrase this content :" + str(info) + " outputs should be " + str(num)  + " lines long.",
+            temperature=0.56,
+            max_tokens=2066,
+            top_p=1,
+            frequency_penalty=0.35,
+            presence_penalty=0,
+            stop=["\n"]
+            )
+            st.write(response.choices[0].text)
+            # st.write(response)
 
 
 
