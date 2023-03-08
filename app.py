@@ -57,7 +57,7 @@ def main():
     if st.button("Generate questions from document"):
         # print_memory_usage()
 
-        openai.api_key =  os.getenv("OPENAI_API_KEY")
+        openai.api_key =  os.getenv("API_KEY")
 
 
         response = openai.Completion.create(
