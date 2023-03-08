@@ -10,7 +10,7 @@ nat = st.text_input("Enter the query in natural language ")
 
 response = openai.Completion.create(
             model="text-davinci-003",
-            prompt="Generate an SQL query from this natural language query :" + str(nat) + "  , for a database consisting of 1200 tools related to AI",
+            prompt="Generate an SQL query from this natural language query to show top 5 tools :" + str(nat) + "  , for a database consisting of 1200 tools related to AI",
             temperature=0.56,
             max_tokens=2066,
             top_p=1,
