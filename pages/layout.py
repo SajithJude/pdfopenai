@@ -9,4 +9,4 @@ if uploaded_file is not None:
     for page_layout in extract_pages(uploaded_file):
         st.write(page_layout)
         for element in page_layout:
-            st.write(element)
+            st.code(element)
