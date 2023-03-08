@@ -10,26 +10,26 @@ from pdfminer.converter import TextConverter, PDFPageAggregator
 
 def extract_layout(pdf_path):
     # Open the PDF file
-    with open(pdf_path, 'rb') as fp:
+    # with open(pdf_path, 'rb') as fp:
         # Create a PDF parser object
-        parser = PDFParser(fp)
-        # Create a PDF document object
-        doc = PDFDocument(parser)
-        # Create a PDF resource manager object
-        rsrcmgr = PDFResourceManager()
-        # Set parameters for analysis
-        laparams = LAParams()
-        # Create a PDF device object
-        device = PDFPageAggregator(rsrcmgr, laparams=laparams)
-        # Create a PDF interpreter object
-        interpreter = PDFPageInterpreter(rsrcmgr, device)
-        # Extract the layout information of each page
-        layouts = []
-        for page in doc.get_pages():
-            interpreter.process_page(page)
-            layout = device.get_result()
-            layouts.append(layout)
-        return layouts
+    parser = PDFParser(pdf_path)
+    # Create a PDF document object
+    doc = PDFDocument(parser)
+    # Create a PDF resource manager object
+    rsrcmgr = PDFResourceManager()
+    # Set parameters for analysis
+    laparams = LAParams()
+    # Create a PDF device object
+    device = PDFPageAggregator(rsrcmgr, laparams=laparams)
+    # Create a PDF interpreter object
+    interpreter = PDFPageInterpreter(rsrcmgr, device)
+    # Extract the layout information of each page
+    layouts = []
+    for page in doc.get_pages():
+        interpreter.process_page(page)
+        layout = device.get_result()
+        layouts.append(layout)
+    return layouts
 
 
 # Define the Streamlit app
