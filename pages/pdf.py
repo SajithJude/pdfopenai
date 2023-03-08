@@ -73,5 +73,6 @@ if pdf_file is not None:
                     st.write(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})")
     with st.expander("layouts"):
         for pages in layouts:
+            for element in pages:
 
-            st.write(pages)
+                st.write(pages)
