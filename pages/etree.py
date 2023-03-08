@@ -20,7 +20,7 @@ if uploaded_file is not None:
     for i in range(len(pdf_reader.pages)):
         
         page = pdf_reader.pages[i]
-        text += page.extractText()
+        text += page.extract_text()
 
     # create XML tree from text
     root = ET.fromstring(text)
