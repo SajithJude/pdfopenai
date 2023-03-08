@@ -1,5 +1,7 @@
 import io
 import streamlit as st
+from pdfminer.high_level import extract_pages
+
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
