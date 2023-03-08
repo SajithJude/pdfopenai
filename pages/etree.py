@@ -16,6 +16,7 @@ if uploaded_file is not None:
 
     # extract text from PDF file
     text = ""
+    
     for i in range(len(pdf_reader.pages)):
         page = pdf_reader.getPage(i)
         text += page.extractText()
