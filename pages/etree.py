@@ -28,4 +28,4 @@ if uploaded_file is not None:
     # root = fromstring(text)
 
     # display XML tree
-    st.write(tostring(root))
+    st.write(tostring(text))
