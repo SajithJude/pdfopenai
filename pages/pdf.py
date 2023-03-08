@@ -34,6 +34,6 @@ if pdf_file is not None:
 
                 node_level = len(element.get_text().split())
                                    # Create an expander for the element based on its node level
-                with st.beta_expander(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})", expanded=node_level <= 1):
+                with st.beta_expander(f"Node level: {node_level}", expanded=node_level <= 1):
 
-                    st.write(f"Node level: {node_level}")
+                    st.write(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})")
