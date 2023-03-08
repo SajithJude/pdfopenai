@@ -71,3 +71,5 @@ if pdf_file is not None:
                 with st.beta_expander(f"Node level: {node_level}", expanded=node_level <= 1):
 
                     st.write(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})")
+    with st.expander(layouts):
+        st.write(page_layout)
