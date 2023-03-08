@@ -21,7 +21,7 @@ def convert_pdf_to_xml(file):
     resource_manager = PDFResourceManager()
 
     # Create a string object to receive the XML data
-    out_string = io.StringIO()
+    out_string = io.BytesIO()
 
     # Create an XML converter object and link it to the output string
     converter = XMLConverter(resource_manager, out_string, codec='utf-8', laparams=None)
