@@ -51,7 +51,7 @@ st.title("PDF Layout Visualizer")
 pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 if pdf_file is not None:
     xml_data = convert_pdf_to_xml(pdf_file)
-    # st.text_area("XML Data", value=xml_data, height=600)
+    st.text_area("XML Data", value=xml_data, height=200)
     root = fromstring(xml_data)
 
     # display XML tree
