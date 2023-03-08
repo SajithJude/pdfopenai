@@ -4,3 +4,4 @@ pdfminer.six
 psutil
 nltk
 openai
+PyPDF2
