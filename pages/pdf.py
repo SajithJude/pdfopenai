@@ -51,7 +51,7 @@ st.title("PDF Layout Visualizer")
 # Allow the user to upload a PDF file
 pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 if pdf_file is not None:
-    xml_data = convert_pdf_to_xml(uploaded_file)
+    xml_data = convert_pdf_to_xml(pdf_file)
     st.text_area("XML Data", value=xml_data, height=600)
     # Convert the uploaded PDF file into a BytesIO object
     pdf_io = io.BytesIO(pdf_file.read())
