@@ -41,8 +41,10 @@ pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 if pdf_file is not None:
     # Convert the uploaded PDF file into a BytesIO object
     pdf_io = io.BytesIO(pdf_file.read())
+    layouts = []
     # Extract the layout information of the PDF file
-    layouts = extract_layout(pdf_io)
+    for page_layout in extract_pages(uploaded_file):
+        layouts.append(page_layout)
     # Visualize the layout information of each page
     for i, layout in enumerate(layouts):
         st.header(f"Page {i+1}")
