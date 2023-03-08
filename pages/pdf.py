@@ -43,7 +43,7 @@ if pdf_file is not None:
     pdf_io = io.BytesIO(pdf_file.read())
     layouts = []
     # Extract the layout information of the PDF file
-    for page_layout in extract_pages(uploaded_file):
+    for page_layout in extract_pages(pdf_file):
         layouts.append(page_layout)
     # Visualize the layout information of each page
     for i, layout in enumerate(layouts):
