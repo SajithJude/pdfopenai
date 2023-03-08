@@ -17,9 +17,10 @@ st.write("hshss")
 uploaded_file = st.file_uploader("Choose a file", "pdf")
 if uploaded_file is not None:
     output_string = StringIO()
-    txt= extract_text_to_fp(uploaded_file, laparams=LAParams(), output_type='html', codec=None)
-    st.write(uploaded_file)
-    st.markdown(txt,  unsafe_allow_html=True)
+    txt= extract_text_to_fp(uploaded_file, output_string, laparams=LAParams(), output_type='html', codec=None)
+    
+    x= st.markdown(txt,  unsafe_allow_html=True)
+    st.write(x)
 
     # for page_layout in extract_pages(uploaded_file):
     #     # st.code(page_layout, language='xmlDoc')
