@@ -33,19 +33,19 @@ def extract_layout(pdf_path):
 
 
 # Define the Streamlit app
-def main():
+
     # Set the title of the app
-    st.title("PDF Layout Visualizer")
-    # Allow the user to upload a PDF file
-    pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
-    if pdf_file is not None:
-        # Convert the uploaded PDF file into a BytesIO object
-        pdf_io = io.BytesIO(pdf_file.read())
-        # Extract the layout information of the PDF file
-        layouts = extract_layout(pdf_io)
-        # Visualize the layout information of each page
-        for i, layout in enumerate(layouts):
-            st.header(f"Page {i+1}")
-            for element in layout:
-                if isinstance(element, (LTTextBoxHorizontal, LTTextLineHorizontal)):
-                    st.write(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})")
+st.title("PDF Layout Visualizer")
+# Allow the user to upload a PDF file
+pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
+if pdf_file is not None:
+    # Convert the uploaded PDF file into a BytesIO object
+    pdf_io = io.BytesIO(pdf_file.read())
+    # Extract the layout information of the PDF file
+    layouts = extract_layout(pdf_io)
+    # Visualize the layout information of each page
+    for i, layout in enumerate(layouts):
+        st.header(f"Page {i+1}")
+        for element in layout:
+            if isinstance(element, (LTTextBoxHorizontal, LTTextLineHorizontal)):
+                st.write(f"{element.get_text().strip()} ({element.x0}, {element.y0}, {element.x1}, {element.y1})")
