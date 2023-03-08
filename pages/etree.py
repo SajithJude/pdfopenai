@@ -12,7 +12,7 @@ if uploaded_file is not None:
     file_contents = uploaded_file.read()
 
     # create PyPDF2 reader object
-    pdf_reader = PyPDF2.PdfFileReader(io.BytesIO(file_contents))
+    pdf_reader = PyPDF2.PdfReader(io.BytesIO(file_contents))
 
     # extract text from PDF file
     text = ""
