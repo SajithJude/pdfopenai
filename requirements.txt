@@ -1,0 +1,6 @@
+streamlit
+ipython
+pdfminer.six
+psutil
+nltk
+openai
